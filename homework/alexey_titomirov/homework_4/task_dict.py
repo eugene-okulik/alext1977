@@ -13,7 +13,7 @@ my_dict['list'].append(555)
 my_dict['list'].pop(1)
 
 # add element in 'dict'
-my_dict['dict']['i am a tuple',] = (12, False, 'example string', 16.31)
+my_dict['dict'][('i am a tuple',)] = (12, False, 'example string', 16.31)
 # delete elements in 'dict'
 del my_dict['dict']['three']
 my_dict['dict'].pop('two')
