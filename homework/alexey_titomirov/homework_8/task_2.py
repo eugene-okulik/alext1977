@@ -1,5 +1,6 @@
 import sys
 
+
 def fibonacci_numbers():
     a, b = 0, 1
     while True:
