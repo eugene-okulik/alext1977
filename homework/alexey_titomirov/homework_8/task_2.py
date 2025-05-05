@@ -6,6 +6,7 @@ def fibonacci_numbers():
         yield a
         a, b = b, a + b
 
+
 sys.set_int_max_str_digits(0)
 count = 1
 for number in fibonacci_numbers():
