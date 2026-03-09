@@ -40,7 +40,6 @@ class Bouquet:
         self.flowers.append(flower)
 
     # Определение общей стоимости букета
-    #@property
     def total_price(self):
         return sum(flower.price for flower in self.flowers)
 
