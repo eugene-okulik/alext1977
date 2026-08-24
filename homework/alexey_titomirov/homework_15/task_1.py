@@ -37,7 +37,7 @@ values = ('MyWorkGroup', 'feb 2026', 'nov 2026')
 cursor.execute(query, values)
 group_table_id = cursor.lastrowid
 
-query = f"UPDATE students SET group_id = (%s) WHERE id = (%s)"
+query = "UPDATE students SET group_id = (%s) WHERE id = (%s)"
 values = [group_table_id, student_table_id]
 cursor.execute(query, values)
 
@@ -90,14 +90,14 @@ db.commit()
 # Получите информацию из базы данных:
 # 1.Все оценки студента
 
-query = f"SELECT * FROM marks WHERE student_id = (%s)"
+query = "SELECT * FROM marks WHERE student_id = (%s)"
 values = [student_table_id, ]
 cursor.execute(query, values)
 print(cursor.fetchall())
 
 # 2.Все книги, которые находятся у студента
 
-query = f"SELECT * FROM books WHERE taken_by_student_id = (%s)"
+query = "SELECT * FROM books WHERE taken_by_student_id = (%s)"
 values = [student_table_id, ]
 cursor.execute(query, values)
 print(cursor.fetchall())
@@ -105,7 +105,7 @@ print(cursor.fetchall())
 # 3.Для вашего студента выведите всё, что о нем есть в базе: группа, книги, оценки с названиями занятий
 # и предметов (всё одним запросом с использованием Join)
 
-query = f"""SELECT * FROM students s JOIN `groups` g ON s.group_id = g.id
+query = """SELECT * FROM students s JOIN `groups` g ON s.group_id = g.id
 JOIN books b ON s.id = b.taken_by_student_id
 JOIN marks m  ON s.id = m.student_id
 JOIN lessons l ON m.lesson_id = l.id
