@@ -26,7 +26,7 @@ with open(eugene_file_path, newline='') as csv_file:
         data.append(row)
 
 for i in range(len(data)):
-    query = """SELECT s.name, s.second_name, g.title, b.title, s2.title, l.title, m.value  
+    query = """SELECT s.name, s.second_name, g.title, b.title, s2.title, l.title, m.value 
     FROM students s JOIN `groups` g ON s.group_id = g.id 
     JOIN books b ON s.id = b.taken_by_student_id 
     JOIN marks m  ON s.id = m.student_id 
